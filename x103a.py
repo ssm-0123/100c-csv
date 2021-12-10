@@ -14,7 +14,6 @@ def main():
     assert "list" in str(type(db))
     assert "list" in str(type(db[0]))
     assert data.find("No.,Equipment Item N") == 0
-    print(f"Barry is found at position: {data.find('Barry')}")
     assert data.find("Barry") == 27089
 
 if __name__ == "__main__":
