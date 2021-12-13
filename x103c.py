@@ -1,18 +1,38 @@
 #!python3
 
-file = open("data.csv")
-data = file.read()
+"""
+You will need to search through the document and find information that is being searched for by the user.
+Search for the Equipment Item Number
+show the Serial Number
 
+If there are multiple matches, return a list of the serial numbers
 
-myData = data.split("\n")
+Method 1:
+Search the entire file, line by line to see if your search string (the needle) is located on the line.
+Add the line to a list for later analysis.
 
-db = []
-for i in myData:
-    db.append(i.split(","))
+For each item in your list, display the relevant information for the line.
 
-print(db[0])
-for i in db:
-    if i[1] == "141769":
-        print(i)
+"""
+
+def findSerial(needle):
+    """
+    input: 
+    str needle: This is the string to look for
+    
+    return:
+    str: Serial number if there is only 1match
+    list: list of str serial numbers if there are multiple matches
+    """
+    filename = "data.csv"
+
+    return None
+    
+
+def main():
+    assert findSerial("141769") == "4MLLN73:
+    
+if __name__ == "__main__":
+    main()
         
 
