@@ -23,15 +23,18 @@ def findSerial(needle):
     return:
     str: Serial number if there is only 1match
     list: list of str serial numbers if there are multiple matches
+    None if no matches
     """
     filename = "data.csv"
-
-    return None
     
+    
+    return None
 
 def main():
-    assert findSerial("141769") == "4MLLN73:
-    
+    assert findSerial("141769") == "4MLLN73"
+    assert findSerial("141") == ['NXEF2AA005608103CA7600', 'BMNWN13', '4MLLN73']
+    assert findSerial("134432") == None
+
 if __name__ == "__main__":
     main()
         
