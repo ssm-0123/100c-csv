@@ -14,8 +14,18 @@ def getData():
     you should return a list of lists
     
     '''
+    data = open('data.csv', 'r')
+    abc = data.readlines()
+    newlist = []
+    for a in abc:
+        newlist.append(a.split())
+    print(newlist)
     return None
 
+getData()
+
+
+"""
 def main():
     data = getData()
     assert len(data) == 148
@@ -25,3 +35,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+"""

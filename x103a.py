@@ -7,6 +7,7 @@ return: file contents as a string
 
 """
 def getData():
+    data = open('data.csv', 'r')
     return data
 
 def main():
