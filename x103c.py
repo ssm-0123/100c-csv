@@ -15,6 +15,22 @@ For each item in your list, display the relevant information for the line.
 
 """
 
+
+def getData():
+    '''
+    Function will read data.csv
+    split the file into a list, with 1 line per element
+    then, split each element into a list using "," as the delimiter
+    you should return a list of lists
+    
+    '''
+    data = open('data.csv', 'r')
+    abc = data.readlines()
+    newlist = []
+    for a in abc:
+        newlist.append(a.split(','))
+    return newlist
+
 def findSerial(needle):
     """
     input: 
@@ -25,10 +41,17 @@ def findSerial(needle):
     list: list of str serial numbers if there are multiple matches
     None if no matches
     """
-    filename = "data.csv"
-    
-    
-    return None
+    laptoplist = getData()
+    result = []
+    for i in laptoplist:
+        if needle in i[1]:
+            result.append(i[5])
+    if len(result) == 0:
+        return None
+    if len(result) == 1:
+        return result[0]
+    if len(result) > 1:
+        return result
 
 def main():
     assert findSerial("141769") == "4MLLN73"
@@ -37,5 +60,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-        
 

@@ -18,14 +18,11 @@ def getData():
     abc = data.readlines()
     newlist = []
     for a in abc:
-        newlist.append(a.split())
-    print(newlist)
-    return None
-
-getData()
+        newlist.append(a.split(','))
+    return newlist
 
 
-"""
+
 def main():
     data = getData()
     assert len(data) == 148
@@ -36,4 +33,3 @@ def main():
 if __name__ == "__main__":
     main()
 
-"""
