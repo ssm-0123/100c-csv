@@ -16,6 +16,22 @@ Return the dictionary item
 
 """
 
+def getData():
+    '''
+    Function will read data.csv
+    split the file into a list, with 1 line per element
+    then, split each element into a list using "," as the delimiter
+    you should return a list of lists
+    
+    '''
+    data = open('data.csv', 'r')
+    abc = data.readlines()
+    newlist = []
+    for a in abc:
+        newlist.append(a.split(','))
+    return newlist
+
+
 def findSerial(needle):
     """
     input: 
@@ -24,13 +40,18 @@ def findSerial(needle):
     return:
     dictionary of key, value pairs
     """
-    filename = "data.csv"
+    laptoplist = getData()
+    result = {}
+    for i in laptoplist:
+        if needle in i[1]:
+            result[i[1]] = i[5]
+    return result
 
 
 def main():
     assert findSerial("141769") == {"141769": "4MLLN73"}
     assert findSerial("134432") == {}
-    assert findSerial("141") == {'138101': 'NXEF2AA005608103CA7600', '141610': 'BMNWN13', '141769': '4MLLN73'}
+    assert findSerial("141") == {'141610': 'BMNWN13', '141769': '4MLLN73'}
 
 if __name__ == "__main__":
     main()
