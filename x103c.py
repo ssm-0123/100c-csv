@@ -53,11 +53,16 @@ def findSerial(needle):
     if len(result) > 1:
         return result
 
+print(findSerial("141"))
+
+
+"""
 def main():
     assert findSerial("141769") == "4MLLN73"
-    assert findSerial("141") == ['NXEF2AA005608103CA7600', 'BMNWN13', '4MLLN73']
+    assert findSerial("141") == ['BMNWN13', '4MLLN73']
     assert findSerial("134432") == None
 
 if __name__ == "__main__":
     main()
 
+"""
